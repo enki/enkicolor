@@ -1,6 +1,6 @@
 {
   "name": "enkicolor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple color module with no prototype hacks and browser-compatibility",
   "main": "enkicolor.js",
   "dependencies": {
