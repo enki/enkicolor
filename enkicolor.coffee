@@ -8,7 +8,7 @@ styles = {
   'red':       ['\u001b[31m', '\u001b[39m'],
   'green':     ['\u001b[32m', '\u001b[39m'],
   'yellow':    ['\u001b[33m', '\u001b[39m'],
-  'blue':      ['\u001b[34m', '\u001b[39m'],
+  'blue':      ["\u001b[34m", '\u001b[39m'],
   'magenta':   ['\u001b[35m', '\u001b[39m'],
   'cyan':      ['\u001b[36m', '\u001b[39m'],
   'white':     ['\u001b[37m', '\u001b[39m'],
@@ -33,10 +33,13 @@ if require('isnode')
 
 target = {}
 
-for x, y of styles
+setFunc = (x, y) =>
   if enabled
     target[x] = (a) => y[0] + a + y[1]
   else
     target[x] = (a) => a
+
+for x, y of styles
+  setFunc(x, y)
 
 module.exports = target
